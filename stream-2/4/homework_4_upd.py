@@ -5,8 +5,8 @@ import requests
 url = "https://www.lejobadequat.com/emplois"
 
 response = requests.get(url)
-response.raise_for_status()  # Перевірка статусу відповіді
-html_content = response.text  # Отримуємо HTML-контент
+response.raise_for_status()
+html_content = response.text
 
 pattern = re.compile(
     r'<a href="(https://www\.lejobadequat\.com/emplois/[^"]+)"[^>]*>.*?<h3 class="jobCard_title m-0">([^<]+)</h3>',
